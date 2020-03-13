@@ -37,6 +37,11 @@
 			$explode = explode(" ", $state);
 			$output[$state_mapping[$explode[0]]] = intval(preg_replace("/[^0-9]/", "", $explode[1]));
 		}
+		foreach($state_mapping as $short){
+			if(!isset($output[$short])){
+				$output[$short] = 0;
+			}
+		}
 		ksort($output);
 		return $output;
 	}
