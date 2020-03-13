@@ -35,7 +35,7 @@
 		$states = explode(", ", $string);
 		foreach($states as $state){
 			$explode = explode(" ", $state);
-			$output[$state_mapping[$explode[0]]] = preg_replace("/[^0-9]/", "", $explode[1]);
+			$output[$state_mapping[$explode[0]]] = intval(preg_replace("/[^0-9]/", "", $explode[1]));
 		}
 		ksort($output);
 		return $output;
@@ -63,13 +63,13 @@
 	$array["timestamp"] = strtotime($array["date"]." ".$array["time"]);
 	
 	/* GET Abstract numbers */
-	$array["total"]["tested_persons"] = preg_replace("/[^0-9]/", "", $nodes[0]->childNodes[2]->nodeValue);
+	$array["total"]["tested_persons"] = intval(preg_replace("/[^0-9]/", "", $nodes[0]->childNodes[2]->nodeValue));
 	
 	preg_match_all("/[0-9]+/", $nodes[0]->childNodes[4]->nodeValue, $matches);
 	$matches = $matches[0];
-	$array["total"]["infected"] = $matches[0];
-	$array["total"]["recovered"] = $matches[1];
-	$array["total"]["dead"] = $matches[2];
+	$array["total"]["infected"] = intval($matches[0]);
+	$array["total"]["recovered"] = intval($matches[1]);
+	$array["total"]["dead"] = intval($matches[2]);
 	$array["total"]["currently_sick"] = $matches[0] - ($matches[1] + $matches[2]);
 	
 	
