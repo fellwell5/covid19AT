@@ -121,7 +121,12 @@
 		$array["details"]["dead"]["states"] = parseStates($states);
 	}else{
 		$tmp_explode = explode(":", $dead_string);
-		$array["details"]["dead"]["states"] = ["w" => preg_replace("/[^0-9]/", "", $tmp_explode[2])];
+		foreach($state_mapping as $short){
+			if(!isset($array["details"]["dead"]["states"][$short])){
+				$array["details"]["dead"]["states"][$short] = 0;
+			}
+		}
+		$array["details"]["dead"]["states"]["w"] = intval(preg_replace("/[^0-9]/", "", $tmp_explode[2]));
 	}
 	
 	
