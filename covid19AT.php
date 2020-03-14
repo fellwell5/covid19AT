@@ -10,6 +10,10 @@
 	*/
 	
 	define("SOURCE", "https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html");
+	$state_mapping = ["Burgenland" => "b", "Kärnten" => "k", "Niederösterreich" => "n", "Oberösterreich" => "o", "Salzburg" => "s",
+		"Steiermark" => "st", "Tirol" => "t", "Vorarlberg" => "v", "Wien" => "w"];
+		
+	$total_population = 0;
 	
 	function get_string_between($string, $start, $end){
 	    $string = ' ' . $string;
@@ -29,8 +33,7 @@
 	}
 	
 	function parseStates($string){
-		$state_mapping = ["Burgenland" => "b", "Kärnten" => "k", "Niederösterreich" => "n", "Oberösterreich" => "o", "Salzburg" => "s",
-		"Steiermark" => "st", "Tirol" => "t", "Vorarlberg" => "v", "Wien" => "w"];
+		global $state_mapping;
 		$output = [];
 		$states = explode(", ", $string);
 		foreach($states as $state){
@@ -68,9 +71,10 @@
 	$array["timestamp"] = strtotime($array["date"]." ".$array["time"]);
 	
 	/* GET Abstract numbers */
-	$array["total"]["tested_persons"] = intval(preg_replace("/[^0-9]/", "", $nodes[0]->childNodes[2]->nodeValue));
+	//print_r($nodes[0]->childNodes[1]);
+	$array["total"]["tested_persons"] = intval(preg_replace("/[^0-9]/", "", $nodes[0]->childNodes[1]->nodeValue));
 	
-	preg_match_all("/[0-9]+/", $nodes[0]->childNodes[4]->nodeValue, $matches);
+	preg_match_all("/[0-9]+/", $nodes[0]->childNodes[3]->nodeValue, $matches);
 	$matches = $matches[0];
 	$array["total"]["infected"] = intval($matches[0]);
 	$array["total"]["recovered"] = intval($matches[1]);
