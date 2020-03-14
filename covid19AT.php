@@ -10,10 +10,21 @@
 	*/
 	
 	define("SOURCE", "https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html");
+	$states_array = [
+		"b" => ["name" => "Burgenland", "name_en" => "Burgenland", "population" => 294466],
+		"k" => ["name" => "Kärnten", "name_en" => "Carinthia", "population" => 561390],
+		"n" => ["name" => "Niederösterreich", "name_en" => "Lower Austria", "population" => 1684623],
+		"o" => ["name" => "Oberösterreich", "name_en" => "Upper Austria", "population" => 1490392],
+		"s" => ["name" => "Salzburg", "name_en" => "Salzburg", "population" => 558479],
+		"st" => ["name" => "Steiermark", "name_en" => "Styria", "population" => 1246576],
+		"t" => ["name" => "Tirol", "name_en" => "Tyrol", "population" => 757852],
+		"v" => ["name" => "Vorarlberg", "name_en" => "Vorarlberg", "population" => 397094],
+		"w" => ["name" => "Wien", "name_en" => "Vienna", "population" => 1911728]
+	];
 	$state_mapping = ["Burgenland" => "b", "Kärnten" => "k", "Niederösterreich" => "n", "Oberösterreich" => "o", "Salzburg" => "s",
 		"Steiermark" => "st", "Tirol" => "t", "Vorarlberg" => "v", "Wien" => "w"];
 		
-	$total_population = 0;
+	$total_population = 8904511;
 	
 	function get_string_between($string, $start, $end){
 	    $string = ' ' . $string;
@@ -72,6 +83,7 @@
 	
 	/* GET Abstract numbers */
 	//print_r($nodes[0]->childNodes[1]);
+	$array["total"]["population"] = $total_population;
 	$array["total"]["tested_persons"] = intval(preg_replace("/[^0-9]/", "", $nodes[0]->childNodes[1]->nodeValue));
 	
 	preg_match_all("/[0-9]+/", $nodes[0]->childNodes[3]->nodeValue, $matches);
@@ -80,6 +92,12 @@
 	$array["total"]["recovered"] = intval($matches[1]);
 	$array["total"]["dead"] = intval($matches[2]);
 	$array["total"]["currently_sick"] = $matches[0] - ($matches[1] + $matches[2]);
+	
+	$array["total"]["tested_persons_percent"] = ($array["total"]["tested_persons"] / $array["total"]["population"]) * 100;
+	$array["total"]["infected_percent"] = ($array["total"]["infected"] / $array["total"]["population"]) * 100;
+	$array["total"]["recovered_percent"] = ($array["total"]["recovered"] / $array["total"]["population"]) * 100;
+	$array["total"]["dead_percent"] = ($array["total"]["dead"] / $array["total"]["population"]) * 100;
+	$array["total"]["currently_sick_percent"] = ($array["total"]["currently_sick"] / $array["total"]["population"]) * 100;
 	
 	
 	$nodes = $finder->query("//div[contains(@class,'infobox')]/p");
@@ -135,24 +153,17 @@
 	
 	
 	/* SET State Informations */
-	$states = [
-		"b" => ["name" => "Burgenland", "name_en" => "Burgenland"],
-		"k" => ["name" => "Kärnten", "name_en" => "Carinthia"],
-		"n" => ["name" => "Niederösterreich", "name_en" => "Lower Austria"],
-		"o" => ["name" => "Oberösterreich", "name_en" => "Upper Austria"],
-		"s" => ["name" => "Salzburg", "name_en" => "Salzburg"],
-		"st" => ["name" => "Steiermark", "name_en" => "Styria"],
-		"t" => ["name" => "Tirol", "name_en" => "Tyrol"],
-		"v" => ["name" => "Vorarlberg", "name_en" => "Vorarlberg"],
-		"w" => ["name" => "Wien", "name_en" => "Vienna"]
-	];
-	
-	foreach($states as $key => $state){
+	foreach($states_array as $key => $state){
 		$array["states"][$key] = $state;
 		$array["states"][$key]["infected"] = (isset($array["details"]["infected"]["states"][$key]) ? $array["details"]["infected"]["states"][$key] : 0);
 		$array["states"][$key]["recovered"] = (isset($array["details"]["recovered"]["states"][$key]) ? $array["details"]["recovered"]["states"][$key] : 0);
 		$array["states"][$key]["dead"] = (isset($array["details"]["dead"]["states"][$key]) ? $array["details"]["dead"]["states"][$key] : 0);
 		$array["states"][$key]["currently_sick"] = $array["states"][$key]["infected"] - ($array["states"][$key]["recovered"] + $array["states"][$key]["dead"]);
+		
+		$array["states"][$key]["infected_percent"] = ($array["states"][$key]["infected"] / $array["states"][$key]["population"]) * 100;
+		$array["states"][$key]["recovered_percent"] = ($array["states"][$key]["recovered"] / $array["states"][$key]["population"]) * 100;
+		$array["states"][$key]["dead_percent"] = ($array["states"][$key]["dead"] / $array["states"][$key]["population"]) * 100;
+		$array["states"][$key]["currently_sick_percent"] = ($array["states"][$key]["currently_sick"] / $array["states"][$key]["population"]) * 100;
 	}
 	
 	header("Content-Type: application/json");
