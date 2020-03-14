@@ -16,60 +16,81 @@ Now you are setup and ready to go!
 ```json
 {
   "data_source": "https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html",
-  "date": "13.03.2020",
+  "date": "14.03.2020",
   "time": "15:00",
-  "timestamp": 1584108000,
+  "timestamp": 1584194400,
   "total": {
-    "tested_persons": "6582",
-    "infected": "504",
-    "recovered": "6",
-    "dead": "1",
-    "currently_sick": 497
+    "population": 8904511,
+    "tested_persons": 7467,
+    "infected": 655,
+    "recovered": 6,
+    "dead": 1,
+    "currently_sick": 648,
+    "tested_persons_percent": 0.08385637347182794,
+    "infected_percent": 0.007355822234370871,
+    "recovered_percent": 0.00006738157771942784,
+    "dead_percent": 0.000011230262953237971,
+    "currently_sick_percent": 0.007277210393698205
   },
   "details": {
     "infected": {
       "information": {
         "name": "Bestätigte Fälle",
         "name_en": "Infected",
-        "updated_date": "13.03.2020",
+        "updated_date": "14.03.2020",
         "updated_time": "15:00",
-        "updated_timestamp": 1584108000
+        "updated_timestamp": 1584194400
       },
       "states": {
-        "b": "7",
-        "n": "63",
-        "o": "68",
-        "s": "23",
-        "st": "52",
-        "t": "167",
-        "v": "22",
-        "w": "82"
+        "b": 10,
+        "k": 0,
+        "n": 82,
+        "o": 116,
+        "s": 30,
+        "st": 71,
+        "t": 206,
+        "v": 34,
+        "w": 101
       }
     },
     "recovered": {
       "information": {
         "name": "Genesene Personen",
         "name_en": "Recovered",
-        "updated_date": "13.03.2020",
-        "updated_time": "08:00",
-        "updated_timestamp": 1584082800
+        "updated_date": "14.03.2020",
+        "updated_time": "15:00",
+        "updated_timestamp": 1584194400
       },
       "states": {
-        "n": "1",
-        "t": "2",
-        "w": "3"
+        "b": 0,
+        "k": 0,
+        "n": 1,
+        "o": 0,
+        "s": 0,
+        "st": 0,
+        "t": 2,
+        "v": 0,
+        "w": 3
       }
     },
     "dead": {
       "information": {
         "name": "Todesfälle",
         "name_en": "Dead",
-        "updated_date": "13.03.2020",
-        "updated_time": "08:00",
-        "updated_timestamp": 1584082800
+        "updated_date": "14.03.2020",
+        "updated_time": "15:00",
+        "updated_timestamp": 1584194400
       },
       "states": {
-        "w": "1"
+        "b": 0,
+        "k": 0,
+        "n": 0,
+        "o": 0,
+        "s": 0,
+        "st": 0,
+        "t": 0,
+        "v": 0,
+        "w": 1
       }
     }
   },
@@ -77,74 +98,119 @@ Now you are setup and ready to go!
     "b": {
       "name": "Burgenland",
       "name_en": "Burgenland",
-      "infected": "7",
+      "population": 294466,
+      "infected": 10,
       "recovered": 0,
       "dead": 0,
-      "currently_sick": 7
+      "currently_sick": 10,
+      "infected_percent": 0.003395977803889074,
+      "recovered_percent": 0,
+      "dead_percent": 0,
+      "currently_sick_percent": 0.003395977803889074
     },
     "k": {
       "name": "Kärnten",
       "name_en": "Carinthia",
+      "population": 561390,
       "infected": 0,
       "recovered": 0,
       "dead": 0,
-      "currently_sick": 0
+      "currently_sick": 0,
+      "infected_percent": 0,
+      "recovered_percent": 0,
+      "dead_percent": 0,
+      "currently_sick_percent": 0
     },
     "n": {
       "name": "Niederösterreich",
       "name_en": "Lower Austria",
-      "infected": "63",
-      "recovered": "1",
+      "population": 1684623,
+      "infected": 82,
+      "recovered": 1,
       "dead": 0,
-      "currently_sick": 62
+      "currently_sick": 81,
+      "infected_percent": 0.004867557904646915,
+      "recovered_percent": 0.00005936046225179165,
+      "dead_percent": 0,
+      "currently_sick_percent": 0.004808197442395123
     },
     "o": {
       "name": "Oberösterreich",
       "name_en": "Upper Austria",
-      "infected": "68",
+      "population": 1490392,
+      "infected": 116,
       "recovered": 0,
       "dead": 0,
-      "currently_sick": 68
+      "currently_sick": 116,
+      "infected_percent": 0.007783187242014182,
+      "recovered_percent": 0,
+      "dead_percent": 0,
+      "currently_sick_percent": 0.007783187242014182
     },
     "s": {
       "name": "Salzburg",
       "name_en": "Salzburg",
-      "infected": "23",
+      "population": 558479,
+      "infected": 30,
       "recovered": 0,
       "dead": 0,
-      "currently_sick": 23
+      "currently_sick": 30,
+      "infected_percent": 0.005371732867305664,
+      "recovered_percent": 0,
+      "dead_percent": 0,
+      "currently_sick_percent": 0.005371732867305664
     },
     "st": {
       "name": "Steiermark",
       "name_en": "Styria",
-      "infected": "52",
+      "population": 1246576,
+      "infected": 71,
       "recovered": 0,
       "dead": 0,
-      "currently_sick": 52
+      "currently_sick": 71,
+      "infected_percent": 0.005695601391331134,
+      "recovered_percent": 0,
+      "dead_percent": 0,
+      "currently_sick_percent": 0.005695601391331134
     },
     "t": {
       "name": "Tirol",
       "name_en": "Tyrol",
-      "infected": "167",
-      "recovered": "2",
+      "population": 757852,
+      "infected": 206,
+      "recovered": 2,
       "dead": 0,
-      "currently_sick": 165
+      "currently_sick": 204,
+      "infected_percent": 0.027182088323313786,
+      "recovered_percent": 0.00026390377012926007,
+      "dead_percent": 0,
+      "currently_sick_percent": 0.026918184553184527
     },
     "v": {
       "name": "Vorarlberg",
       "name_en": "Vorarlberg",
-      "infected": "22",
+      "population": 397094,
+      "infected": 34,
       "recovered": 0,
       "dead": 0,
-      "currently_sick": 22
+      "currently_sick": 34,
+      "infected_percent": 0.008562204415075523,
+      "recovered_percent": 0,
+      "dead_percent": 0,
+      "currently_sick_percent": 0.008562204415075523
     },
     "w": {
       "name": "Wien",
       "name_en": "Vienna",
-      "infected": "82",
-      "recovered": "3",
-      "dead": "1",
-      "currently_sick": 78
+      "population": 1911728,
+      "infected": 101,
+      "recovered": 3,
+      "dead": 1,
+      "currently_sick": 97,
+      "infected_percent": 0.005283178360101437,
+      "recovered_percent": 0.00015692608990400307,
+      "dead_percent": 0.00005230869663466769,
+      "currently_sick_percent": 0.005073943573562767
     }
   }
 }
