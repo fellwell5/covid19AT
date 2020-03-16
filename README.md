@@ -7,6 +7,12 @@ The source of the data looks like this:
 
 [![Public listing](https://imgur.com/M0pJeln.png)](https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html)
 
+# API endpoint
+You can also use the public API endpoint:
+```
+https://md.matthiasschaffer.com/covid19AT/
+```
+
 # Installation
 The installation is fairly simple. Just copy the covid19AT.php in your desired location.
 
