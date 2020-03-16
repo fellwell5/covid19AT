@@ -46,10 +46,14 @@
 	function parseStates($string){
 		global $state_mapping;
 		$output = [];
-		$states = explode(", ", $string);
+		$states = explode(")", $string);
 		foreach($states as $state){
 			$explode = explode(" ", $state);
-			$output[$state_mapping[$explode[0]]] = intval(preg_replace("/[^0-9]/", "", $explode[1]));
+			if(count($explode) == 2){
+				$output[$state_mapping[$explode[0]]] = intval(preg_replace("/[^0-9]/", "", $explode[1]));
+			}elseif(count($explode) == 3){
+				$output[$state_mapping[$explode[1]]] = intval(preg_replace("/[^0-9]/", "", $explode[2]));
+			}
 		}
 		foreach($state_mapping as $short){
 			if(!isset($output[$short])){
@@ -77,6 +81,7 @@
 	/* GET Stand Date & Time */
 	$tmp_explode = explode(", ", $nodes[0]->childNodes[0]->nodeValue);
 	$array["data_source"] = SOURCE;
+	$array["data_source_short"] = "https://masch.xyz/covid-info";
 	$array["date"] = $tmp_explode[1];
 	$array["time"] = substr($tmp_explode[2], 0, 5);
 	$array["timestamp"] = strtotime($array["date"]." ".$array["time"]);
@@ -138,18 +143,8 @@
 		"name" => $tmp_explode[0], "name_en" => "Dead",
 		"updated_date" => $date, "updated_time" => $time, "updated_timestamp" => strtotime($date." ".$time)
 	];
-	if(strpos($dead_string, ", nach Bundesländern: ") !== false){
-		$states = get_string_from($dead_string, ", nach Bundesländern: ");
-		$array["details"]["dead"]["states"] = parseStates($states);
-	}else{
-		$tmp_explode = explode(":", $dead_string);
-		foreach($state_mapping as $short){
-			if(!isset($array["details"]["dead"]["states"][$short])){
-				$array["details"]["dead"]["states"][$short] = 0;
-			}
-		}
-		$array["details"]["dead"]["states"]["w"] = intval(preg_replace("/[^0-9]/", "", $tmp_explode[2]));
-	}
+	$states = get_string_from($dead_string, ", nach Bundesländern: ");
+	$array["details"]["dead"]["states"] = parseStates($states);
 	
 	
 	/* SET State Informations */
