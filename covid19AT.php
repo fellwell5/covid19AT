@@ -87,16 +87,36 @@
 	$array["timestamp"] = strtotime($array["date"]." ".$array["time"]);
 	
 	/* GET Abstract numbers */
-	//print_r($nodes[0]->childNodes[1]);
+	//print_r($nodes[0]->childNodes[8]);
 	$array["total"]["population"] = $total_population;
-	$array["total"]["tested_persons"] = intval(preg_replace("/[^0-9]/", "", $nodes[0]->childNodes[1]->nodeValue));
+	$numbers = [];
+	foreach($nodes[0]->childNodes as $node){
+		if(strpos($node->nodeValue, "Stand") !== false) continue;
+		if(strpos($node->nodeValue, "Uhr") !== false) continue;
+		if(strpos($node->nodeValue, "0800 555 621") !== false) continue;
+		
+		preg_match_all("/[0-9.]+/", $node->nodeValue, $matches);
+		foreach($matches[0] as $match){
+			$value = intval(preg_replace("/[^0-9]/", "", $match));
+			if($value != 0 && $value < $total_population){
+				$numbers[] = $value;
+			}
+		}
+	}
 	
+	/*$array["total"]["tested_persons"] = intval(preg_replace("/[^0-9]/", "", $nodes[0]->childNodes[2]->nodeValue));
 	preg_match_all("/[0-9]+/", $nodes[0]->childNodes[3]->nodeValue, $matches);
 	$matches = $matches[0];
 	$array["total"]["infected"] = intval($matches[0]);
 	$array["total"]["recovered"] = intval($matches[1]);
 	$array["total"]["dead"] = intval($matches[2]);
-	$array["total"]["currently_sick"] = $matches[0] - ($matches[1] + $matches[2]);
+	$array["total"]["currently_sick"] = $matches[0] - ($matches[1] + $matches[2]);*/
+	
+	$array["total"]["tested_persons"] = $numbers[0];
+	$array["total"]["infected"] = $numbers[1];
+	$array["total"]["recovered"] = $numbers[2];
+	$array["total"]["dead"] = $numbers[3];
+	$array["total"]["currently_sick"] = $array["total"]["infected"] - ($array["total"]["recovered"] + $array["total"]["dead"]);
 	
 	$array["total"]["tested_persons_percent"] = ($array["total"]["tested_persons"] / $array["total"]["population"]) * 100;
 	$array["total"]["infected_percent"] = ($array["total"]["infected"] / $array["total"]["population"]) * 100;
