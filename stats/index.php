@@ -1,6 +1,10 @@
 <?php
 	require_once("mysql.php");
-	$last_update = (file_exists("../last_update.txt")) ? filemtime("../last_update.txt") : $row["timestamp"];
+	$commitHash = trim(exec('git log --pretty="%h" -n1 HEAD'));
+  $commitDate = new \DateTime(trim(exec('git log -n1 --pretty=%ci HEAD')));
+  $commitDate->setTimezone(new \DateTimeZone('Europe/Vienna'));
+  
+  $version = sprintf('rev.%s (%s)', $commitHash, $commitDate->format('Y-m-d H:i:s'));
 ?>
 <!doctype html>
 <html lang="de" class="h-100">
@@ -176,10 +180,14 @@
 		</main>
 		
 		<footer class="footer mt-auto py-3">
-		  <div class="container">
-		    <span class="text-muted"><a href="https://github.com/fellwell5/covid19AT">Github: fellwell5/covid19AT</a> &bull; <a href="https://masch.xyz/covid-info">Quelle: BMSPGK</a></span>
-		  </div>
-		</footer>
+      <div class="container">
+        <span class="text-muted">
+          <a href="https://masch.xyz/covid-info" target="_blank">Quelle: BMSPGK</a> &bull; 
+          <a href="https://github.com/fellwell5/covid19AT" target="_blank"><i class="fab fa-github" title="Github"></i> fellwell5/covid19AT</a> &bull; 
+          Version: <?php echo $version; ?>
+        </span>
+      </div>
+    </footer>
 		
 		<script src="js/Chart.bundle.min.js"></script>
 		<script>
