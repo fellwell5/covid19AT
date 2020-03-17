@@ -19,7 +19,13 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/Chart.min.css" rel="stylesheet">
 		
-		<meta name="theme-color" content="#563d7c">
+		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#b91d47">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="theme-color" content="#b91d47">
 
     <style>
       .bd-placeholder-img {
@@ -172,7 +178,7 @@
 							<div class="card-body">
 								<canvas id="deadChart" width="100%"></canvas>
 							</div>
-							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $row["timestamp"]); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s"); ?></div>
+							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $row["timestamp"]); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s", $last_update); ?></div>
 						</div>
 					</div>
 				</div>
@@ -218,7 +224,7 @@
             data: <?php echo json_encode($totalChart["infected"]); ?>
           },
           {
-            label: "zurzeit erkrankt",
+            label: "erkrankt",
             backgroundColor: "rgba(201,203,207,0.2)",
             borderColor: "rgb(201,203,207)",
             data: <?php echo json_encode($totalChart["currently_sick"]); ?>
