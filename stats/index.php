@@ -37,15 +37,23 @@
 			}
 			
 			.card-body-icon {
-		    position: absolute;
-		    z-index: 0;
-		    top: -20px;
-		    right: 0px;
-		    font-size: 5rem;
-		    -webkit-transform: rotate(5deg);
-		    -ms-transform: rotate(5deg);
-		    transform: rotate(5deg);
-		}
+				position: absolute;
+				z-index: 0;
+				top: -20px;
+				right: 0px;
+				font-size: 5rem;
+				-webkit-transform: rotate(5deg);
+				-ms-transform: rotate(5deg);
+				transform: rotate(5deg);
+			}
+			
+			@media screen and (orientation:landscape)
+			{
+			   .orientation-warning
+			   {
+			      display: none;
+			   }
+			}
     </style>
   </head>
   <body class="d-flex flex-column h-100">
@@ -59,7 +67,7 @@
 				<h1>covid-19 Austria</h1>
 		  	<h3>Stand <?php echo date("d.m.Y H:i", $row["timestamp"]); ?></h3>
 	      <div class="row">
-	        <div class="col-xl-3 col-sm-3 mb-3">
+	        <div class="col-xl-3 col-sm-6 mb-3">
 	          <div class="card text-white bg-primary o-hidden h-100">
 	            <div class="card-body">
 	              <div class="card-body-icon">
@@ -69,7 +77,7 @@
 	            </div>
 	          </div>
 	        </div>
-	        <div class="col-xl-3 col-sm-3 mb-3">
+	        <div class="col-xl-3 col-sm-6 mb-3">
 	          <div class="card text-white bg-warning o-hidden h-100">
 	            <div class="card-body">
 	              <div class="card-body-icon">
@@ -79,7 +87,7 @@
 	            </div>
 	          </div>
 	        </div>
-	        <div class="col-xl-3 col-sm-3 mb-3">
+	        <div class="col-xl-3 col-sm-6 mb-3">
 	          <div class="card text-white bg-success o-hidden h-100">
 	            <div class="card-body">
 	              <div class="card-body-icon">
@@ -89,7 +97,7 @@
 	            </div>
 	          </div>
 	        </div>
-	        <div class="col-xl-3 col-sm-3 mb-3">
+	        <div class="col-xl-3 col-sm-6 mb-3">
 	          <div class="card text-white bg-danger o-hidden h-100">
 	            <div class="card-body">
 	              <div class="card-body-icon">
@@ -103,6 +111,16 @@
 		  </div>
 			<div class="container">
 				<div class="row">
+					
+					<div class="col-12 orientation-warning">
+						<div class="card mb-3">
+							<div class="card-body">
+								<img src="port2land.png" width="90%">
+								<h3>Um die Statistiken besser lesen zu können, drehen Sie Ihr Gerät bitte horizontal.</h3>
+							</div>
+						</div>
+					</div>
+					
 					<div class="col-12">
 						<div class="card mb-3">
 							<div class="card-header">
