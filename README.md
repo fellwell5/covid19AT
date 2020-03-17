@@ -13,6 +13,10 @@ You can also use the public API endpoint:
 https://md.matthiasschaffer.com/covid19AT/
 ```
 
+# Statistics
+Check out the public statistics page:
+[https://md.matthiasschaffer.com/covid19AT/stats/](https://md.matthiasschaffer.com/covid19AT/stats/)
+
 # Installation
 The installation is fairly simple. Just copy the covid19AT.php in your desired location.
 
