@@ -269,6 +269,12 @@
           },
           tooltips: {
             mode: "x"
+          },
+          elements: {
+            line: {
+              cubicInterpolationMode: 'monotone',
+              lineTension: 0
+            }
           }
         }
       });
@@ -370,6 +376,12 @@
           },
           tooltips: {
             mode: "x"
+          },
+          elements: {
+            line: {
+              cubicInterpolationMode: 'monotone',
+              lineTension: 0
+            }
           }
         }
       });
@@ -471,6 +483,12 @@
           },
           tooltips: {
             mode: "x"
+          },
+          elements: {
+            line: {
+              cubicInterpolationMode: 'monotone',
+              lineTension: 0
+            }
           }
         }
       });
@@ -572,6 +590,12 @@
           },
           tooltips: {
             mode: "x"
+          },
+          elements: {
+            line: {
+              cubicInterpolationMode: 'monotone',
+              lineTension: 0
+            }
           }
         }
       });
