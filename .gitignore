@@ -2,3 +2,5 @@ cron.php
 covid.json
 stats/mysql.php
 alexa/keys/*
+last_update.txt
+covid-parse.error

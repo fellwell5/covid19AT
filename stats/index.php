@@ -1,5 +1,6 @@
 <?php
 	require_once("mysql.php");
+	$last_update = (file_exists("../last_update.txt")) ? filemtime("../last_update.txt") : $row["timestamp"];
 ?>
 <!doctype html>
 <html lang="de" class="h-100">
@@ -63,6 +64,7 @@
 				<?php
 					$result = $mysqli->query("SELECT * FROM `total` ORDER BY `timestamp` DESC LIMIT 0,1");
 					$row = $result->fetch_assoc();
+	        $last_update = (file_exists("../last_update.txt")) ? filemtime("../last_update.txt") : $row["timestamp"];
 				?>
 				<h1>covid-19 Austria</h1>
 		  	<h3>Stand <?php echo date("d.m.Y H:i", $row["timestamp"]); ?></h3>
@@ -130,7 +132,7 @@
 								<small>Klicken Sie auf die Beschreibung um die Linie zu verstecken. / Click on the description to hide the line.</small>
 								<canvas id="totalChart" width="100%"></canvas>
 							</div>
-							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $row["timestamp"]); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s"); ?></div>
+							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $row["timestamp"]); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s", $last_update); ?></div>
 						</div>
 					</div>
 					
@@ -142,7 +144,7 @@
 							<div class="card-body">
 								<canvas id="infectedChart" width="100%"></canvas>
 							</div>
-							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $row["timestamp"]); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s"); ?></div>
+							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $row["timestamp"]); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s", $last_update); ?></div>
 						</div>
 					</div>
 					
@@ -154,7 +156,7 @@
 							<div class="card-body">
 								<canvas id="recoveredChart" width="100%"></canvas>
 							</div>
-							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $row["timestamp"]); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s"); ?></div>
+							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $row["timestamp"]); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s", $last_update); ?></div>
 						</div>
 					</div>
 					
@@ -559,6 +561,15 @@
           }
         }
       });
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-56491949-5"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-56491949-5');
 		</script>
 	</body>
 </html>
