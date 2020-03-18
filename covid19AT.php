@@ -50,9 +50,11 @@
 		foreach($states as $state){
 			$explode = explode(" ", $state);
 			if(count($explode) == 2){
-				$output[$state_mapping[$explode[0]]] = intval(preg_replace("/[^0-9]/", "", $explode[1]));
+				$name = trim(str_replace([",", " ", chr(194), chr(160)], "", $explode[0]));
+				$output[$state_mapping[$name]] = intval(preg_replace("/[^0-9]/", "", $explode[1]));
 			}elseif(count($explode) == 3){
-				$output[$state_mapping[$explode[1]]] = intval(preg_replace("/[^0-9]/", "", $explode[2]));
+				$name = trim(str_replace([",", " ", chr(194), chr(160)], "", $explode[1]));
+				$output[$state_mapping[$name]] = intval(preg_replace("/[^0-9]/", "", $explode[2]));
 			}
 		}
 		foreach($state_mapping as $short){
