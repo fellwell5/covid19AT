@@ -78,6 +78,10 @@
 				?>
 				<h1>covid-19 Austria</h1>
 		  	<h3>Stand <?php echo date("d.m.Y H:i", $row["timestamp"]); ?></h3>
+		  	<div class="jumbotron">
+		  	  <h3>Offizielle Information des Bundesministeriums für Soziales, Gesundheit, Pflege und Konsumentenschutz</h3>
+		  	  <a class="btn btn-primary" href="https://info.gesundheitsministerium.at/">Hier klicken <i class="fas fa-angle-right"></i></a>
+		  	</div>
 	      <div class="row">
 	        <div class="col-xl-3 col-sm-6 mb-3">
 	          <div class="card text-white bg-primary o-hidden h-100">
@@ -188,7 +192,7 @@
 		<footer class="footer mt-auto py-3">
       <div class="container">
         <span class="text-muted">
-          <a href="https://masch.xyz/covid-info" target="_blank">Quelle: BMSPGK</a> &bull; 
+          <a href="https://www.data.gv.at/covid-19/" target="_blank">Quelle: data.gv.at</a> &bull; 
           <a href="https://github.com/fellwell5/covid19AT" target="_blank"><i class="fab fa-github" title="Github"></i> fellwell5/covid19AT</a> &bull; 
           Version: <?php echo $version; ?>
         </span>

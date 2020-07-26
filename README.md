@@ -27,18 +27,18 @@ Now you are setup and ready to go!
 # Example output
 ```json
 {
-  "date": "26.07.2020",
-  "time": "18:00",
-  "timestamp": 1595779200,
+  "timestamp": 1595782800,
+  "date": 1595782800,
+  "time": 1595782800,
   "total": {
     "tested_persons": 847898,
-    "infected": 20482,
+    "infected": 20486,
     "recovered": 18209,
     "dead": 688,
     "currently_sick": 1551,
     "population": 8904511,
     "tested_persons_percent": 9.522117497524569,
-    "infected_percent": 0.2300182458082201,
+    "infected_percent": 0.23006316686003309,
     "recovered_percent": 0.2044918581155102,
     "dead_percent": 0.007726420911827725,
     "currently_sick_percent": 0.01741813784047209
@@ -48,8 +48,8 @@ Now you are setup and ready to go!
       "information": {
         "name": "Zurzeit Erkrankt",
         "name_en": "Currently Sick",
-        "updated_timestamp": 1595779200,
-        "updated_datetime": "2020-07-26T18:00:00"
+        "updated_timestamp": 1595782800,
+        "updated_datetime": "2020-07-26T19:00:00"
       },
       "states": {
         "w": 546,
@@ -67,8 +67,8 @@ Now you are setup and ready to go!
       "information": {
         "name": "Genesen",
         "name_en": "Recovered",
-        "updated_timestamp": 1595779200,
-        "updated_datetime": "2020-07-26T18:00:00"
+        "updated_timestamp": 1595782800,
+        "updated_datetime": "2020-07-26T19:00:00"
       },
       "states": {
         "b": 362,
@@ -86,8 +86,8 @@ Now you are setup and ready to go!
       "information": {
         "name": "Verstorben",
         "name_en": "Dead",
-        "updated_timestamp": 1595779200,
-        "updated_datetime": "2020-07-26T18:00:00"
+        "updated_timestamp": 1595782800,
+        "updated_datetime": "2020-07-26T19:00:00"
       },
       "states": {
         "b": 11,
@@ -101,12 +101,115 @@ Now you are setup and ready to go!
         "w": 201
       }
     },
+    "district_infected": {
+      "information": {
+        "name": "Infiziert (nach Bezirk)",
+        "name_en": "Infected (by district)",
+        "updated_timestamp": 1595782800,
+        "updated_datetime": "2020-07-26T19:00:00"
+      },
+      "states": {
+        "101": 19,
+        "103": 28,
+        "104": 26,
+        "105": 10,
+        "106": 81,
+        "107": 66,
+        "108": 26,
+        "109": 145,
+        "201": 102,
+        "202": 24,
+        "203": 5,
+        "204": 51,
+        "205": 54,
+        "206": 46,
+        "207": 51,
+        "208": 55,
+        "209": 50,
+        "210": 15,
+        "301": 45,
+        "302": 109,
+        "303": 27,
+        "304": 89,
+        "305": 314,
+        "306": 221,
+        "307": 136,
+        "308": 131,
+        "309": 16,
+        "310": 48,
+        "311": 97,
+        "312": 196,
+        "313": 173,
+        "314": 54,
+        "315": 190,
+        "316": 146,
+        "317": 227,
+        "318": 238,
+        "319": 289,
+        "320": 105,
+        "321": 194,
+        "322": 76,
+        "323": 109,
+        "325": 74,
+        "401": 667,
+        "402": 75,
+        "403": 139,
+        "404": 162,
+        "405": 82,
+        "406": 140,
+        "407": 115,
+        "408": 90,
+        "409": 65,
+        "410": 491,
+        "411": 350,
+        "412": 76,
+        "413": 171,
+        "414": 66,
+        "415": 200,
+        "416": 335,
+        "417": 170,
+        "418": 128,
+        "501": 192,
+        "502": 80,
+        "503": 242,
+        "504": 456,
+        "505": 26,
+        "506": 371,
+        "601": 571,
+        "603": 54,
+        "606": 261,
+        "610": 193,
+        "611": 38,
+        "612": 109,
+        "614": 9,
+        "616": 106,
+        "617": 205,
+        "620": 52,
+        "621": 64,
+        "622": 321,
+        "623": 68,
+        "701": 443,
+        "702": 297,
+        "703": 409,
+        "704": 376,
+        "705": 540,
+        "706": 1009,
+        "707": 156,
+        "708": 63,
+        "709": 358,
+        "801": 270,
+        "802": 283,
+        "803": 161,
+        "804": 226,
+        "900": 4797
+      }
+    },
     "infected": {
       "information": {
         "name": "Infizierte",
         "name_en": "Infected",
-        "updated_timestamp": 1595779200,
-        "updated_datetime": "2020-07-26T18:00:00"
+        "updated_timestamp": 1595782800,
+        "updated_datetime": "2020-07-26T19:00:00"
       },
       "states": {
         "b": 398,
