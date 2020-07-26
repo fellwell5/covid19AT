@@ -48,198 +48,76 @@ Now you are setup and ready to go!
       "information": {
         "name": "Zurzeit Erkrankt",
         "name_en": "Currently Sick",
-        "updated_timestamp": 1595779200
+        "updated_timestamp": 1595779200,
+        "updated_datetime": "2020-07-26T18:00:00"
       },
       "states": {
-        "w": {
-          "number": 546,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "v": {
-          "number": 25,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "t": {
-          "number": 54,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "st": {
-          "number": 109,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "s": {
-          "number": 74,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "o": {
-          "number": 460,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "n": {
-          "number": 247,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "k": {
-          "number": 11,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "b": {
-          "number": 25,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        }
+        "w": 546,
+        "v": 25,
+        "t": 54,
+        "st": 109,
+        "s": 74,
+        "o": 460,
+        "n": 247,
+        "k": 11,
+        "b": 25
       }
     },
     "recovered": {
       "information": {
         "name": "Genesen",
         "name_en": "Recovered",
-        "updated_timestamp": 1595779200
+        "updated_timestamp": 1595779200,
+        "updated_datetime": "2020-07-26T18:00:00"
       },
       "states": {
-        "b": {
-          "number": 362,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "k": {
-          "number": 430,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "n": {
-          "number": 2936,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "o": {
-          "number": 2978,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "s": {
-          "number": 1226,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "st": {
-          "number": 1786,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "t": {
-          "number": 3500,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "v": {
-          "number": 901,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "w": {
-          "number": 4090,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        }
+        "b": 362,
+        "k": 430,
+        "n": 2936,
+        "o": 2978,
+        "s": 1226,
+        "st": 1786,
+        "t": 3500,
+        "v": 901,
+        "w": 4090
       }
     },
     "dead": {
       "information": {
         "name": "Verstorben",
         "name_en": "Dead",
-        "updated_timestamp": 1595779200
+        "updated_timestamp": 1595779200,
+        "updated_datetime": "2020-07-26T18:00:00"
       },
       "states": {
-        "b": {
-          "number": 11,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "k": {
-          "number": 13,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "n": {
-          "number": 107,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "o": {
-          "number": 58,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "s": {
-          "number": 37,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "st": {
-          "number": 142,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "t": {
-          "number": 101,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "v": {
-          "number": 18,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        },
-        "w": {
-          "number": 201,
-          "timestamp": 1595779200,
-          "datetime": "2020-07-26T18:00:00"
-        }
+        "b": 11,
+        "k": 13,
+        "n": 107,
+        "o": 58,
+        "s": 37,
+        "st": 142,
+        "t": 101,
+        "v": 18,
+        "w": 201
       }
     },
     "infected": {
       "information": {
         "name": "Infizierte",
         "name_en": "Infected",
-        "updated_timestamp": 1595779200
+        "updated_timestamp": 1595779200,
+        "updated_datetime": "2020-07-26T18:00:00"
       },
       "states": {
-        "b": {
-          "number": 398
-        },
-        "k": {
-          "number": 454
-        },
-        "n": {
-          "number": 3290
-        },
-        "o": {
-          "number": 3496
-        },
-        "s": {
-          "number": 1337
-        },
-        "st": {
-          "number": 2037
-        },
-        "t": {
-          "number": 3655
-        },
-        "v": {
-          "number": 944
-        },
-        "w": {
-          "number": 4837
-        }
+        "b": 398,
+        "k": 454,
+        "n": 3290,
+        "o": 3496,
+        "s": 1337,
+        "st": 2037,
+        "t": 3655,
+        "v": 944,
+        "w": 4837
       }
     }
   },
