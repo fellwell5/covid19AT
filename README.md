@@ -1,5 +1,7 @@
 
 # covid19AT
+![HealthCheck](https://healthchecks.io/badge/398fe207-255b-43fd-9f63-bb488c/aAz0uawd.svg)
+
 Shows COVID-19 data for the country austria based by states.
 covid19AT was converting text to json data, but is now using public data from data.gv.at.
 ![Anwendung](https://i.imgur.com/wWsDVg0.jpg)
