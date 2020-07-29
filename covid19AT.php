@@ -123,7 +123,10 @@
 		"updated_datetime" => $bezirke[0]["Timestamp"]
 	];
 	foreach($bezirke as $be){
-		$array["details"]["district_infected"]["states"][intval($be["GKZ"])] = intval($be["Anzahl"]);
+		$array["details"]["district_infected"]["districts"][intval($be["GKZ"])] = intval($be["Anzahl"]);
+	}
+	foreach($bezirke as $be){
+		$array["details"]["district_infected"]["districts_name"][intval($be["GKZ"])] = $be["Bezirk"];
 	}
 	
 	/* SET State Informations */

@@ -185,6 +185,28 @@
 							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $row["timestamp"]); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s", $last_update); ?></div>
 						</div>
 					</div>
+					
+					<div class="col-12">
+					  <div class="card mb-3">
+							<div class="card-header">
+								<i class="fas fa-list-ol"></i> Bezirke (TOP 5)
+							</div>
+							<div class="card-body">
+								<ul class="list-group">
+      					  <?php
+      					    $result = $mysqli->query("SELECT districts_infected.*, districts.Bezirk FROM districts_infected LEFT JOIN districts ON districts_infected.GKZ = districts.GKZ WHERE timestamp = (SELECT MAX(timestamp) FROM districts_infected) ORDER BY number DESC LIMIT 0,5");
+      					    while($row = $result->fetch_assoc()){
+      					      $timestamp = $row["timestamp"];
+      					      echo "<li class=\"list-group-item d-flex justify-content-between align-items-center\">";
+      					      echo $row["Bezirk"]." <span class=\"badge badge-primary badge-pill\">".$row["number"]."</span>";
+      					      echo "</li>";
+      					    }
+      					  ?>
+                </ul>
+							</div>
+							<div class="card-footer small text-muted">Stand: <?php echo date("d.m.Y H:i", $timestamp); ?> &bull; Aktualisiert: <?php echo date("d.m.Y H:i:s", $last_update); ?></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -194,6 +216,7 @@
         <span class="text-muted">
           <a href="https://www.data.gv.at/covid-19/" target="_blank">Quelle: data.gv.at</a> &bull; 
           <a href="https://github.com/fellwell5/covid19AT" target="_blank"><i class="fab fa-github" title="Github"></i> fellwell5/covid19AT</a> &bull; 
+          <img src="https://healthchecks.io/badge/398fe207-255b-43fd-9f63-bb488c/aAz0uawd.svg" title="Healthcheck" /> &bull; 
           Version: <?php echo $version; ?>
         </span>
       </div>
